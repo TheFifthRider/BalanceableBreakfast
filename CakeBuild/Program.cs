@@ -1,11 +1,13 @@
 using System;
 using System.IO;
 using Cake.Common;
+using Cake.Common.Diagnostics;
 using Cake.Common.IO;
 using Cake.Common.Tools.DotNet;
 using Cake.Common.Tools.DotNet.Clean;
 using Cake.Common.Tools.DotNet.Publish;
 using Cake.Core;
+using Cake.Core.IO;
 using Cake.Frosting;
 using Cake.Json;
 using Newtonsoft.Json;
