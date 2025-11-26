@@ -1,0 +1,13 @@
+{
+  "proteinModifierComment": "Health boost at maximum Protein nutrition",
+  "proteinModifier": "Protein Health Boost",
+  "dairyModifierComment": "Health boost at maximum Dairy nutrition",
+  "dairyModifier": "Dairy Health Boost",
+  "grainModifierComment": "Health boost at maximum Grain nutrition",
+  "grainModifier": "Grain Health Boost",
+  "vegetableModifierComment": "Health boost at maximum Vegetable nutrition",
+  "vegetableModifier": "Vegetable Health Boost",
+  "fruitModifierComment": "Health boost at maximum Fruit nutrition",
+  "fruitModifier": "Fruit Health Boost",
+  "balanceableBreakfastSettings": "Balanceable Breakfast Settings"
+}

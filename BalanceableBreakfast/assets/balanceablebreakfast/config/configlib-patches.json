@@ -1,0 +1,61 @@
+{
+  "version": 0,
+  "file": "BalanceableBreakfast.json",
+  "patches": {},
+  "settings": [
+    {
+      "type": "separator",
+      "title": "balanceableBreakfastSettings"
+    },
+    {
+      "code": "fruitModifier",
+      "comment": "fruitModifierComment",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0
+      }
+    },
+    {
+      "code": "vegetableModifier",
+      "comment": "vegetableModifierComment",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0
+      }
+    },
+    {
+      "code": "grainModifier",
+      "comment": "grainModifierComment",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0
+      }
+    },
+    {
+      "code": "proteinModifier",
+      "comment": "proteinModifierComment",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0
+      }
+    },
+    {
+      "code": "dairyModifier",
+      "comment": "dairyModifierComment",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0
+      }
+    }
+  ]
+}
