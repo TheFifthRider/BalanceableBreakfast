@@ -4,7 +4,7 @@
   "name": "BalanceableBreakfast",
   "side": "server",
   "authors": [ "TheFifthRider" ],
-  "description": "Configure the max health bonus from different nutrient types!",
+  "description": "Configure the max health bonus from different nutrition categories!",
   "version": "1.0.0",
   "dependencies": { "game": "" }
 }
