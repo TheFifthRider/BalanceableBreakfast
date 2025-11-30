@@ -30,8 +30,20 @@ public class ModifyUpdateNutrientHealthBoost
 
         var healthGain = fruitHealthGain + grainHealthGain + vegetableHealthGain + proteinHealthGain +
                          dairyHealthGain;
-
+        
         bh.SetMaxHealthModifiers("nutrientHealthMod", healthGain);
+        
+        var fruitWalkspeedGain = BalanceableBreakfastCore.config.fruitWalkspeedModifier * fruitRel;
+        var grainWalkspeedGain = BalanceableBreakfastCore.config.grainWalkspeedModifier * grainRel;
+        var vegetableWalkspeedGain = BalanceableBreakfastCore.config.vegetableWalkspeedModifier * vegetableRel;
+        var proteinWalkspeedGain = BalanceableBreakfastCore.config.proteinWalkspeedModifier * proteinRel;
+        var dairyWalkspeedGain = BalanceableBreakfastCore.config.dairyWalkspeedModifier * dairyRel;
+
+        var walkspeedGain = fruitWalkspeedGain + grainWalkspeedGain + vegetableWalkspeedGain + proteinWalkspeedGain +
+                            dairyWalkspeedGain;
+        
+        __instance.entity.Stats["walkspeed"].Set(BalanceableBreakfastCore.ModId+"WalkspeedMod", walkspeedGain);
+        
         return false;
     }
 }

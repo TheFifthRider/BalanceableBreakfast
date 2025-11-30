@@ -2,12 +2,13 @@
 using BalanceableBreakfast.Config;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Server;
 
 namespace BalanceableBreakfast;
 
 public class BalanceableBreakfastCore : ModSystem
 {
-    private static string configName = "BalanceableBreakfast.json";
+    public static string configName = "BalanceableBreakfast.json";
     public static BalanceableBreakfastConfig config;
 
     
@@ -30,6 +31,12 @@ public class BalanceableBreakfastCore : ModSystem
     {
         base.Start(api);
         LoadConfig(api);
+    }
+
+    public override void AssetsLoaded(ICoreAPI api)
+    {
+        var adapter = new ConfigLibAdapter();
+        adapter.OptionallyRegisterWithConfigLib(api);
     }
 
 
