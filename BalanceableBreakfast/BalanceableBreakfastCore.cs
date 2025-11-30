@@ -25,6 +25,8 @@ public class BalanceableBreakfastCore : ModSystem
         ModId = Mod.Info.ModID;
         HarmonyInstance = new HarmonyLib.Harmony(ModId);
         HarmonyInstance.PatchAll();
+        var adapter = new ConfigLibAdapter();
+        adapter.OptionallyRegisterWithConfigLib(api);
     }
 
     public override void Start(ICoreAPI api)
@@ -32,14 +34,7 @@ public class BalanceableBreakfastCore : ModSystem
         base.Start(api);
         LoadConfig(api);
     }
-
-    public override void AssetsLoaded(ICoreAPI api)
-    {
-        var adapter = new ConfigLibAdapter();
-        adapter.OptionallyRegisterWithConfigLib(api);
-    }
-
-
+    
     public override void Dispose()
     {
         HarmonyInstance?.UnpatchAll(ModId);
