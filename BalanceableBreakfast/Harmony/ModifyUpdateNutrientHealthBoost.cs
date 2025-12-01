@@ -22,28 +22,34 @@ public class ModifyUpdateNutrientHealthBoost
             return true;
         }
 
+        var healthGain = CalculateHealthGain(fruitRel, grainRel, vegetableRel, proteinRel, dairyRel);
+        bh.SetMaxHealthModifiers("nutrientHealthMod", healthGain);
+        
+        var walkspeedGain = CalculateWalkspeedGain(fruitRel, grainRel, vegetableRel, proteinRel, dairyRel);
+        __instance.entity.Stats["walkspeed"].Set(BalanceableBreakfastCore.ModId+"WalkspeedMod", walkspeedGain);
+        
+        return false;
+    }
+
+    private static float CalculateHealthGain(float fruitRel, float grainRel, float vegetableRel, float proteinRel, float dairyRel)
+    {
         var fruitHealthGain = BalanceableBreakfastCore.config.fruitModifier * fruitRel;
         var grainHealthGain = BalanceableBreakfastCore.config.grainModifier * grainRel;
         var vegetableHealthGain = BalanceableBreakfastCore.config.vegetableModifier * vegetableRel;
         var proteinHealthGain = BalanceableBreakfastCore.config.proteinModifier * proteinRel;
         var dairyHealthGain = BalanceableBreakfastCore.config.dairyModifier * dairyRel;
 
-        var healthGain = fruitHealthGain + grainHealthGain + vegetableHealthGain + proteinHealthGain +
-                         dairyHealthGain;
-        
-        bh.SetMaxHealthModifiers("nutrientHealthMod", healthGain);
-        
+        return fruitHealthGain + grainHealthGain + vegetableHealthGain + proteinHealthGain + dairyHealthGain;
+    }
+    
+    private static float CalculateWalkspeedGain(float fruitRel, float grainRel, float vegetableRel, float proteinRel, float dairyRel)
+    {
         var fruitWalkspeedGain = BalanceableBreakfastCore.config.fruitWalkspeedModifier * fruitRel;
         var grainWalkspeedGain = BalanceableBreakfastCore.config.grainWalkspeedModifier * grainRel;
         var vegetableWalkspeedGain = BalanceableBreakfastCore.config.vegetableWalkspeedModifier * vegetableRel;
         var proteinWalkspeedGain = BalanceableBreakfastCore.config.proteinWalkspeedModifier * proteinRel;
         var dairyWalkspeedGain = BalanceableBreakfastCore.config.dairyWalkspeedModifier * dairyRel;
 
-        var walkspeedGain = fruitWalkspeedGain + grainWalkspeedGain + vegetableWalkspeedGain + proteinWalkspeedGain +
-                            dairyWalkspeedGain;
-        
-        __instance.entity.Stats["walkspeed"].Set(BalanceableBreakfastCore.ModId+"WalkspeedMod", walkspeedGain);
-        
-        return false;
+        return fruitWalkspeedGain + grainWalkspeedGain + vegetableWalkspeedGain + proteinWalkspeedGain + dairyWalkspeedGain;
     }
 }
