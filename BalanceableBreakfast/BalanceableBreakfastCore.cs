@@ -1,5 +1,6 @@
 ﻿using System;
 using BalanceableBreakfast.Config;
+using ConfigLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
@@ -10,7 +11,6 @@ public class BalanceableBreakfastCore : ModSystem
 {
     public static string configName = "BalanceableBreakfast.json";
     public static BalanceableBreakfastConfig config;
-
     
     public static ILogger Logger { get; private set; }
     public static string ModId { get; private set; }
@@ -25,16 +25,18 @@ public class BalanceableBreakfastCore : ModSystem
         ModId = Mod.Info.ModID;
         HarmonyInstance = new HarmonyLib.Harmony(ModId);
         HarmonyInstance.PatchAll();
-        var adapter = new ConfigLibAdapter();
-        adapter.OptionallyRegisterWithConfigLib(api);
     }
 
-    public override void Start(ICoreAPI api)
+    public override void StartServerSide(ICoreServerAPI api)
     {
-        base.Start(api);
+        base.StartServerSide(api);
         LoadConfig(api);
+        if (api.ModLoader.IsModEnabled("configlib"))
+        {
+            SubscribeToConfigChange(api);
+        }
     }
-    
+
     public override void Dispose()
     {
         HarmonyInstance?.UnpatchAll(ModId);
@@ -43,6 +45,23 @@ public class BalanceableBreakfastCore : ModSystem
         ModId = null;
         Api = null;
         base.Dispose();
+    }
+    
+    private static void SubscribeToConfigChange(ICoreAPI api)
+    {
+        ConfigLibModSystem system = api.ModLoader.GetModSystem<ConfigLibModSystem>();
+
+        system.SettingChanged += (domain, _, setting) =>
+        {
+            if (domain != ModId) return;
+
+            setting.AssignSettingValue(config);
+        };
+
+        system.ConfigsLoaded += () =>
+        {
+            system.GetConfig(ModId)?.AssignSettingsValues(config);
+        };
     }
     
     private void LoadConfig(ICoreAPI clientApi)

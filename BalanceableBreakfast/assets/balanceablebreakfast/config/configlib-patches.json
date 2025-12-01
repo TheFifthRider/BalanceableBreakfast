@@ -1,0 +1,131 @@
+{
+  "version": 0,
+  "file": "BalanceableBreakfast.json",
+  "patches": {},
+  "settings": [
+    {
+      "type": "separator",
+      "title": "Balanceable Breakfast Settings"
+    },
+    {
+      "code": "fruitModifier",
+      "ingui": "Fruit Health Boost",
+      "comment": "Health boost at maximum Fruit nutrition",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0,
+        "step": 0.1
+      }
+    },
+    {
+      "code": "fruitWalkspeedModifier",
+      "ingui": "Fruit Walkspeed Boost",
+      "comment": "Walkspeed bonus at maximum Fruit nutrition. 0.01 = +1% walkspeed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "vegetableModifier",
+      "ingui": "Vegetable Health Boost",
+      "comment": "Health boost at maximum Vegetable nutrition",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0,
+        "step": 0.1
+      }
+    },
+    {
+      "code": "vegetableWalkspeedModifier",
+      "ingui": "Vegetable Walkspeed Boost",
+      "comment": "Walkspeed bonus at maximum Vegetable nutrition. 0.01 = +1% walkspeed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "grainModifier",
+      "ingui": "Grain Health Boost",
+      "comment": "Health boost at maximum Grain nutrition",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0,
+        "step": 0.1
+      }
+    },
+    {
+      "code": "grainWalkspeedModifier",
+      "ingui": "Grain Walkspeed Boost",
+      "comment": "Walkspeed bonus at maximum Grain nutrition. 0.01 = +1% walkspeed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "proteinModifier",
+      "ingui": "Protein Health Boost",
+      "comment": "Health boost at maximum Protein nutrition",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0,
+        "step": 0.1
+      }
+    },
+    {
+      "code": "proteinWalkspeedModifier",
+      "ingui": "Protein Walkspeed Boost",
+      "comment": "Walkspeed bonus at maximum Protein nutrition. 0.01 = +1% walkspeed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "dairyModifier",
+      "ingui": "Dairy Health Boost",
+      "comment": "Health boost at maximum Dairy nutrition",
+      "type": "float",
+      "default": 2.5,
+      "range": {
+        "min": 0.0,
+        "max": 10.0,
+        "step": 0.1
+      }
+    },
+    {
+      "code": "dairyWalkspeedModifier",
+      "ingui": "Dairy Walkspeed Boost",
+      "comment": "Walkspeed bonus at maximum Dairy nutrition. 0.01 = +1% walkspeed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    }
+  ]
+}
