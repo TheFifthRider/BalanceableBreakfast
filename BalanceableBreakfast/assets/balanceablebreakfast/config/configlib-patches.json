@@ -26,8 +26,8 @@
       "type": "float",
       "default": 0.0,
       "range": {
-        "min": -0.2,
-        "max": 0.2,
+        "min": -0.5,
+        "max": 0.5,
         "step": 0.01
       }
     },
@@ -38,8 +38,32 @@
       "type": "float",
       "default": 0.0,
       "range": {
-        "min": -0.2,
-        "max": 0.2,
+        "min": -0.5,
+        "max": 0.5,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "startingHungerRateModifier",
+      "ingui": "Starting Hunger Rate Modifier",
+      "comment": "Hunger Rate modifier regardless of nutrition gain. 0.01 = +1% hunger rate",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.5,
+        "max": 0.5,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "startingMiningSpeedModifier",
+      "ingui": "Starting Mining Speed Modifier",
+      "comment": "Mining Speed modifier regardless of nutrition gain. 0.01 = +1% mining speed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.5,
+        "max": 0.5,
         "step": 0.01
       }
     },
@@ -75,6 +99,30 @@
       "code": "fruitHealingEffectivenessModifier",
       "ingui": "Fruit Healing Effectivenss Boost",
       "comment": "Healing Effectiveness bonus at maximum Fruit nutrition. 0.01 = +1% healing effectiveness",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "fruitHungerRateModifier",
+      "ingui": "Fruit Hunger Rate Reduction",
+      "comment": "Hunger Rate reduction at maximum Fruit nutrition. -0.01 = -1% hunger rate",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.2,
+        "max": 0.0,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "fruitMiningSpeedModifier",
+      "ingui": "Fruit Mining Speed Boost",
+      "comment": "Mining Speed bonus at maximum Fruit nutrition. 0.01 = +1% mining speed",
       "type": "float",
       "default": 0.0,
       "range": {
@@ -124,6 +172,30 @@
       }
     },
     {
+      "code": "vegetableHungerRateModifier",
+      "ingui": "Vegetable Hunger Rate Reduction",
+      "comment": "Hunger Rate reduction at maximum Vegetable nutrition. -0.01 = -1% hunger rate",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.2,
+        "max": 0.0,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "vegetableMiningSpeedModifier",
+      "ingui": "Vegetable Mining Speed Boost",
+      "comment": "Mining Speed bonus at maximum Vegetable nutrition. 0.01 = +1% mining speed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
       "type": "separator",
       "title": "Grain"
     },
@@ -155,6 +227,30 @@
       "code": "grainHealingEffectivenessModifier",
       "ingui": "Grain Healing Effectiveness Boost",
       "comment": "Healing effectiveness bonus at maximum Grain nutrition. 0.01 = +1% healing effectiveness",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "grainHungerRateModifier",
+      "ingui": "Grain Hunger Rate Reduction",
+      "comment": "Hunger Rate reduction at maximum Grain nutrition. -0.01 = -1% hunger rate",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.2,
+        "max": 0.0,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "grainMiningSpeedModifier",
+      "ingui": "Grain Mining Speed Boost",
+      "comment": "Mining Speed bonus at maximum Grain nutrition. 0.01 = +1% mining speed",
       "type": "float",
       "default": 0.0,
       "range": {
@@ -204,6 +300,30 @@
       }
     },
     {
+      "code": "proteinHungerRateModifier",
+      "ingui": "Protein Hunger Rate Reduction",
+      "comment": "Hunger Rate reduction at maximum Protein nutrition. -0.01 = -1% hunger rate",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.2,
+        "max": 0.0,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "proteinMiningSpeedModifier",
+      "ingui": "Protein Mining Speed Boost",
+      "comment": "Mining Speed bonus at maximum Protein nutrition. 0.01 = +1% mining speed",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
       "type": "separator",
       "title": "Dairy"
     },
@@ -235,6 +355,30 @@
       "code": "dairyHealingEffectivenessModifier",
       "ingui": "Dairy Healing Effectiveness Boost",
       "comment": "Healing Effectiveness bonus at maximum Dairy nutrition. 0.01 = +1% healing effectiveness",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": 0.0,
+        "max": 0.2,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "dairyHungerRateModifier",
+      "ingui": "Dairy Hunger Rate Reduction",
+      "comment": "Hunger Rate reduction at maximum Dairy nutrition. -0.01 = -1% hunger rate",
+      "type": "float",
+      "default": 0.0,
+      "range": {
+        "min": -0.2,
+        "max": 0.0,
+        "step": 0.01
+      }
+    },
+    {
+      "code": "dairyMiningSpeedModifier",
+      "ingui": "Dairy Mining Speed Boost",
+      "comment": "Mining Speed bonus at maximum Dairy nutrition. 0.01 = +1% mining speed",
       "type": "float",
       "default": 0.0,
       "range": {

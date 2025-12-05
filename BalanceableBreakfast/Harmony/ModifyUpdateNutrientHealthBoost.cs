@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using HarmonyLib;
 using Vintagestory.GameContent;
 
 namespace BalanceableBreakfast.Harmony;
@@ -39,7 +40,7 @@ public class ModifyUpdateNutrientHealthBoost
             dairyRel, BalanceableBreakfastCore.config.dairyWalkspeedModifier);
         __instance.entity.Stats["walkspeed"].Set(BalanceableBreakfastCore.ModId+"WalkspeedMod", walkspeedGain);
         __instance.entity.Stats["walkspeed"].Set(BalanceableBreakfastCore.ModId+"StartingWalkspeedMod", BalanceableBreakfastCore.config.startingWalkspeedModifier);
-
+        
         var healingEffectivenessGain = CalculateModifier(
             fruitRel, BalanceableBreakfastCore.config.fruitHealingEffectivenessModifier, 
             grainRel, BalanceableBreakfastCore.config.grainHealingEffectivenessModifier, 
@@ -48,6 +49,24 @@ public class ModifyUpdateNutrientHealthBoost
             dairyRel, BalanceableBreakfastCore.config.dairyHealingEffectivenessModifier);
         __instance.entity.Stats["healingeffectivness"].Set(BalanceableBreakfastCore.ModId+"HealingeffectivenessMod", healingEffectivenessGain);
         __instance.entity.Stats["healingeffectivness"].Set(BalanceableBreakfastCore.ModId+"StartingHealingeffectivenessMod", BalanceableBreakfastCore.config.startingHealingEffectivenessModifier);
+        
+        var hungerRateReduction = CalculateModifier(
+            fruitRel, BalanceableBreakfastCore.config.fruitHungerRateModifier, 
+            grainRel, BalanceableBreakfastCore.config.grainHungerRateModifier, 
+            vegetableRel, BalanceableBreakfastCore.config.vegetableHungerRateModifier,
+            proteinRel, BalanceableBreakfastCore.config.proteinHungerRateModifier, 
+            dairyRel, BalanceableBreakfastCore.config.dairyHungerRateModifier);
+        __instance.entity.Stats["hungerrate"].Set(BalanceableBreakfastCore.ModId+"HungerRateMod", hungerRateReduction);
+        __instance.entity.Stats["hungerrate"].Set(BalanceableBreakfastCore.ModId+"StartingHungerRateMod", BalanceableBreakfastCore.config.startingHungerRateModifier);
+        
+        var miningSpeedGain = CalculateModifier(
+            fruitRel, BalanceableBreakfastCore.config.fruitMiningSpeedModifier, 
+            grainRel, BalanceableBreakfastCore.config.grainMiningSpeedModifier, 
+            vegetableRel, BalanceableBreakfastCore.config.vegetableMiningSpeedModifier,
+            proteinRel, BalanceableBreakfastCore.config.proteinMiningSpeedModifier, 
+            dairyRel, BalanceableBreakfastCore.config.dairyMiningSpeedModifier);
+        __instance.entity.Stats["miningSpeedMul"].Set(BalanceableBreakfastCore.ModId+"MiningSpeedMod", miningSpeedGain);
+        __instance.entity.Stats["miningSpeedMul"].Set(BalanceableBreakfastCore.ModId+"StartingMiningSpeedMod", BalanceableBreakfastCore.config.startingMiningSpeedModifier);
         
         return false;
     }
