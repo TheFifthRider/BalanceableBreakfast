@@ -1,4 +1,6 @@
-﻿namespace BalanceableBreakfast.Config;
+﻿using System.Collections.Generic;
+
+namespace BalanceableBreakfast.Config;
 
 public class BalanceableBreakfastConfig
 {
@@ -37,4 +39,37 @@ public class BalanceableBreakfastConfig
     public float dairyHealingEffectivenessModifier = 0.0f;
     public float dairyHungerRateModifier = 0.0f;
     public float dairyMiningSpeedModifier = 0.0f;
+
+	public Dictionary<string, Dictionary<string, object>> advanced = new();
+}
+
+public class ConfigConstants
+{
+	public const string LINEAR = "linear";
+	public const string THRESHOLD = "threshold";
+}
+
+public class AdvancedModifierConfig
+{
+	public float startingModifier;
+	public string entityStatName;
+	public string modifierStyle;
+}
+
+public class LinearModifierConfig : AdvancedModifierConfig
+{
+	public float maxFruitModifier;
+	public float maxVegetableModifier;
+	public float maxProteinModifier;
+	public float maxGrainModifier;
+	public float maxDairyModifier;
+}
+
+public class ThresholdModifierConfig : AdvancedModifierConfig
+{
+	public Dictionary<float, float> fruitPercentageToModifier;
+	public Dictionary<float, float> vegetablePercentageToModifier;
+	public Dictionary<float, float> proteinPercentageToModifier;
+	public Dictionary<float, float> grainPercentageToModifier;
+	public Dictionary<float, float> dairyPercentageToModifier;
 }
