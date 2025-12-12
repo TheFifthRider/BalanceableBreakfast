@@ -48,13 +48,11 @@ public class ModifyUpdateNutrientHealthBoost
         {
             try
             {
-
                 var statGain = CalculateModifier(nutritionLevels, modifier);
                 __instance.entity.Stats[modifier.EntityStatName].Set(
                     BalanceableBreakfastCore.ModId + "Starting" + modifier.ModifierName, modifier.StartingModifier);
                 __instance.entity.Stats[modifier.EntityStatName]
                     .Set(BalanceableBreakfastCore.ModId + modifier.ModifierName, statGain);
-
             }
             catch (KeyNotFoundException e)
             {
@@ -67,7 +65,6 @@ public class ModifyUpdateNutrientHealthBoost
         {
             try
             {
-
                 var statGain = CalculateThresholdModifier(nutritionLevels, modifier);
                 __instance.entity.Stats[modifier.EntityStatName].Set(
                     BalanceableBreakfastCore.ModId + "Starting" + modifier.ModifierName, modifier.StartingModifier);
