@@ -3,8 +3,14 @@ using System.Text.Json.Serialization;
 
 namespace BalanceableBreakfast.Model;
 
-public class NutritionDependentThresholdModifier (Dictionary<float, float> fruitPercentageToModifier, Dictionary<float, float> vegetablePercentageToModifier, Dictionary<float, float> proteinPercentageToModifier, Dictionary<float, float> grainPercentageToModifier, Dictionary<float, float> dairyPercentageToModifier)
+public class NutritionDependentThresholdModifier (float startingModifier, string entityStatName, string modifierName, Dictionary<float, float> fruitPercentageToModifier, Dictionary<float, float> vegetablePercentageToModifier, Dictionary<float, float> proteinPercentageToModifier, Dictionary<float, float> grainPercentageToModifier, Dictionary<float, float> dairyPercentageToModifier)
 {
+    [JsonPropertyName("startingModifier")]
+    public float StartingModifier { get; set; } = startingModifier;
+    [JsonPropertyName("entityStatName")]
+    public string EntityStatName { get; set; } = entityStatName;
+    [JsonPropertyName("modifierName")]
+    public string ModifierName { get; set; } = modifierName;
     [JsonPropertyName("fruitPercentageToModifier")]
     public Dictionary<float, float> FruitPercentageToModifier { get; set; } = fruitPercentageToModifier;
     [JsonPropertyName("vegetablePercentageToModifier")]
