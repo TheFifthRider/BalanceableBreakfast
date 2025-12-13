@@ -40,7 +40,7 @@ public class ModifyUpdateNutrientHealthBoost
             BalanceableBreakfastCore.config.dairyModifier
             );
         var healthGain = CalculateModifier(nutritionLevels, healthModifier);
-        bh.SetMaxHealthModifiers(healthModifier.ModifierName, healthGain);
+        bh.SetMaxHealthModifiers(BalanceableBreakfastCore.ModId + healthModifier.ModifierName, healthGain);
         bh.SetMaxHealthModifiers(BalanceableBreakfastCore.ModId + "Starting" + healthModifier.ModifierName, healthModifier.StartingModifier);
         
         var (linearModifiers, thresholdModifiers) = ConfigAdapter.LoadModifiers(BalanceableBreakfastCore.config);
